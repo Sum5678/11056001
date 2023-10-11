@@ -52,10 +52,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'my0927.urls'
 
-TEMPLATES = [
+TEMPLATES = [      #樣板
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR /'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
