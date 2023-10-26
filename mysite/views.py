@@ -10,11 +10,11 @@ def homepage(request):
     now = datetime.now
     return render(request, 'index.html', locals())
 
-def showpost(requet, slug):
+def showpost(request, slug):
     try:
         post = Post.objects.get(slug=slug)
         if post !=None:
-            return render(requet, 'post.html', locals())
+            return render(request, 'post.html', locals())
         else:
             return redirect("/")
     except:
