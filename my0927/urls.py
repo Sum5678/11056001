@@ -1,5 +1,5 @@
 """
-URL configuration for my0927 project.
+URL configuration for mblog0927 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,10 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mysite.views import homepage,showpost
+from mysite import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', homepage, name="homepage"),
-    path('post/<slug:slug>/', showpost, name="showpost")
+    path('', views.homepage, name="homepage"),
+    path('post/<slug:slug>/', views.showpost, name="showpost"),
+    path('about/', views.about),
+    path('about/<int:num>', views.about, name='about'),
+    path('carlist/', views.carlist),
+    path('carlist/<int:maker>/', views.carlist, name='carlist-url'),
 ]
